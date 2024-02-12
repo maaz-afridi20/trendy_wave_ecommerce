@@ -12,14 +12,7 @@ class App extends StatelessWidget {
       darkTheme: TAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       // initialBinding: GeneralBindings(),
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'Awesome! 🎊 Project Structure is set up and running. \n Happy T Coding 🎊',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
+      home: const OnBoardingScreen(),
     );
   }
 }
