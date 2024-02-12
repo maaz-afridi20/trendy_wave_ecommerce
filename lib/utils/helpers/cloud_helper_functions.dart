@@ -2,13 +2,14 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 /// Helper functions for cloud-related operations.
 class TCloudHelperFunctions {
-  /// Helper function to check the state of a single database record.
-  ///
-  /// Returns a Widget based on the state of the snapshot.
-  /// If data is still loading, it returns a CircularProgressIndicator.
-  /// If no data is found, it returns a generic "No Data Found" message.
-  /// If an error occurs, it returns a generic error message.
-  /// Otherwise, it returns null.
+  TCloudHelperFunctions._();
+  // Helper function to check the state of a single database record.
+  //
+  // Returns a Widget based on the state of the snapshot.
+  // If data is still loading, it returns a CircularProgressIndicator.
+  // If no data is found, it returns a generic "No Data Found" message.
+  // If an error occurs, it returns a generic error message.
+  // Otherwise, it returns null.
   static Widget? checkSingleRecordState<T>(AsyncSnapshot<T> snapshot) {
     if (snapshot.connectionState == ConnectionState.waiting) {
       return const Center(child: CircularProgressIndicator());

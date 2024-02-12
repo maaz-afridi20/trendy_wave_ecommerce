@@ -7,8 +7,6 @@ class THelperFunctions {
 
     if (value == 'Green') {
       return Colors.green;
-    } else if (value == 'Green') {
-      return Colors.green;
     } else if (value == 'Red') {
       return Colors.red;
     } else if (value == 'Blue') {
@@ -62,11 +60,18 @@ class THelperFunctions {
     );
   }
 
-  static void navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => screen),
-    );
+  //! this is inbuilt mehtod for moving to another page.
+  // static void navigateToScreen(BuildContext context, Widget screen) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (_) => screen),
+  //   );
+  // }
+
+  //! this is by using getx.
+
+  static void navigateToScreen(Widget screen) {
+    Get.to(() => screen);
   }
 
   static String truncateText(String text, int maxLength) {
@@ -77,8 +82,10 @@ class THelperFunctions {
     }
   }
 
-  static bool isDarkMode(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark;
+  // we can also use the inbuilt buildcontext of flutter
+  // but as we are using getx so we use Get.Context.
+  static bool isDarkMode() {
+    return Theme.of(Get.context!).brightness == Brightness.dark;
   }
 
   static Size screenSize() {
