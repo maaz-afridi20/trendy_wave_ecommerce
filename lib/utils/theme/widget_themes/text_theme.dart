@@ -1,10 +1,10 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
-/// Custom Class for Light & Dark Text Themes
+//! Custom Class for Light & Dark Text Themes
 class TTextTheme {
   TTextTheme._(); // To avoid creating instances
 
-  /// Customizable Light Text Theme
+  //! Customizable Light Text Theme
   static TextTheme lightTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
         fontSize: 32.0, fontWeight: FontWeight.bold, color: TColors.dark),
@@ -34,7 +34,7 @@ class TTextTheme {
         color: TColors.dark.withOpacity(0.5)),
   );
 
-  /// Customizable Dark Text Theme
+  //! Customizable Dark Text Theme
   static TextTheme darkTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
         fontSize: 32.0, fontWeight: FontWeight.bold, color: TColors.light),

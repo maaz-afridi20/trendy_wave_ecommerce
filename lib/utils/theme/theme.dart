@@ -7,7 +7,8 @@ class TAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     disabledColor: TColors.grey,
-    brightness: Brightness.light,
+    brightness: Brightness
+        .light, // only this will tell that this is light or black theme
     primaryColor: TColors.primary,
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
@@ -25,6 +26,8 @@ class TAppTheme {
     fontFamily: 'Poppins',
     disabledColor: TColors.grey,
     brightness: Brightness.dark,
+    //this will tell to themedata that it will be dart.
+    // this brightness is necessary.
     primaryColor: TColors.primary,
     textTheme: TTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,

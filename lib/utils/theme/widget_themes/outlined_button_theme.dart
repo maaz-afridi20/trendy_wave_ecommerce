@@ -1,10 +1,9 @@
-/* -- Light & Dark Outlined Button Themes -- */
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TOutlinedButtonTheme {
   TOutlinedButtonTheme._(); //To avoid creating instances
 
-  /* -- Light Theme -- */
+  //!Light Outlined Button Theme
   static final lightOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
@@ -19,7 +18,7 @@ class TOutlinedButtonTheme {
     ),
   );
 
-  /* -- Dark Theme -- */
+  //!Dark Outlined Button Theme
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       foregroundColor: TColors.light,

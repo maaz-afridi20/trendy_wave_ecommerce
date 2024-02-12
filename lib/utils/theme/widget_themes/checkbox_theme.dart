@@ -1,13 +1,13 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
-/// Custom Class for Light & Dark Text Themes
 class TCheckboxTheme {
   TCheckboxTheme._(); // To avoid creating instances
 
-  /// Customizable Light Text Theme
+  //! Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
     shape:
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs)),
+    // the check color is the icon color like(✅) color.
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
         return TColors.white;
@@ -15,6 +15,7 @@ class TCheckboxTheme {
         return TColors.black;
       }
     }),
+    // this is the background color
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
         return TColors.primary;
@@ -24,7 +25,7 @@ class TCheckboxTheme {
     }),
   );
 
-  /// Customizable Dark Text Theme
+  //! Customizable Dark Text Theme
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
     shape:
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs)),

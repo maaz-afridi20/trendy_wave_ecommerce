@@ -8,6 +8,7 @@ class TBottomSheetTheme {
     backgroundColor: TColors.white,
     modalBackgroundColor: TColors.white,
     constraints: const BoxConstraints(minWidth: double.infinity),
+    // constraints is the size of the bottom sheet.
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   );
 
