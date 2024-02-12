@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TColors {
+  TColors._();
   // App theme colors
   static const Color primary = Color(0xFF4b68ff);
   static const Color secondary = Color(0xFFFFE24B);
@@ -44,7 +45,15 @@ class TColors {
   static const Color lightGrey = Color(0xFFF9F9F9);
   static const Color white = Color(0xFFFFFFFF);
 
+  // Gradient Color
+
+  static const Gradient linearGradient = LinearGradient(
+    colors: [
+      Color(0xffff9a93),
+      Color(0xfffad0c4),
+      Color(0xfffad0c4),
+    ],
+    begin: Alignment(0.0, 0.0),
+    end: Alignment(0.707, -0.707),
+  );
 }
-
-
-
