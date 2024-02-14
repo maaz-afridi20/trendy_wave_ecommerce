@@ -1,3 +1,4 @@
+import 'package:trendy_waves_ecommerce/features/authentications/screens/login/login.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class OnBoardingControllers extends GetxController {
@@ -14,13 +15,13 @@ class OnBoardingControllers extends GetxController {
   //! Jump to specific index
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
-    pageController.jumpToPage(index);
+    pageController.jumpTo(index);
   }
 
   //! Update the current index and jump to next page.
   void nextPage() {
     if (currentPageIndex.value == 2) {
-      // Get.to(() => LoginScreen());
+      Get.offAll(() => const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
