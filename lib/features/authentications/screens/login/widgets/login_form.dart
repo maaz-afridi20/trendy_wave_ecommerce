@@ -1,3 +1,4 @@
+import 'package:trendy_waves_ecommerce/features/authentications/screens/password_configuration/forget_password.dart';
 import 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/signup_screen.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
@@ -57,7 +58,7 @@ class TLoginForm extends StatelessWidget {
 
                 //! Forget password.
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPasswordScreen()),
                   child: const Text(TTexts.forgetPassword),
                 ),
               ],

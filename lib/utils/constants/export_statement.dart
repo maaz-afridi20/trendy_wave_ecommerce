@@ -43,3 +43,5 @@ export 'package:velocity_x/velocity_x.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/widgets/terms_and_conditions.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/verify_email.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/login/login.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/success_screen/success_screen.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/screens/password_configuration/resed_password.dart';
