@@ -45,3 +45,4 @@ export 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/
 export 'package:trendy_waves_ecommerce/features/authentications/screens/login/login.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/success_screen/success_screen.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/password_configuration/resed_password.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/home/home.dart';

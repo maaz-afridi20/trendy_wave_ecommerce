@@ -1,4 +1,3 @@
-import 'package:trendy_waves_ecommerce/features/authentications/screens/login/login.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class OnBoardingControllers extends GetxController {

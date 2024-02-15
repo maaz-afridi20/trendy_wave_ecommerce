@@ -38,6 +38,7 @@ dependencies:
   logger: ^2.0.2+1
   url_launcher: ^6.2.1
   flutter_native_splash: ^2.3.5
+  velocity_x: ^4.1.2
   smooth_page_indicator: ^1.1.0
 
   # icons.
@@ -53,7 +54,7 @@ dependencies:
   firebase_auth: ^4.13.0
   cloud_firestore: ^4.13.0
   firebase_storage: ^11.5.0
-  velocity_x: ^4.1.2
+
 
 
 
