@@ -46,3 +46,7 @@ export 'package:trendy_waves_ecommerce/features/authentications/screens/login/lo
 export 'package:trendy_waves_ecommerce/common/widgets/success_screen/success_screen.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/password_configuration/resed_password.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/home/home.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/circular_container.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/primary_header_container.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
