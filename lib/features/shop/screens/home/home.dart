@@ -16,6 +16,30 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   //! Appbar.
                   THomeAppbar(),
+                  SizedBox(height: TSizes.spaceBtwSections),
+
+                  //! Search Bar.
+                  TSearchContainer(text: 'Search In Store...'),
+                  SizedBox(height: TSizes.spaceBtwSections),
+
+                  //! Categories.
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        //! Heading..
+                        TSectionHeading(
+                          title: 'Popular Products',
+                          showActionButton: false,
+                          textColor: TColors.white,
+                        ),
+                        SizedBox(height: TSizes.spaceBtwItems),
+
+                        //! Categories..
+                        THomeCategories(),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),

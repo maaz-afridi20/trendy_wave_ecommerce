@@ -53,3 +53,5 @@ export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges
 export 'package:trendy_waves_ecommerce/common/widgets/appbar/appbar.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/products/cart_menu_icon.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/home/widgets/home_appbar.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/search_container.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/texts/section_heading.dart';
