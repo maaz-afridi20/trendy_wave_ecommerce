@@ -50,3 +50,6 @@ export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/c
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/primary_header_container.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/appbar/appbar.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/cart_menu_icon.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/home/widgets/home_appbar.dart';

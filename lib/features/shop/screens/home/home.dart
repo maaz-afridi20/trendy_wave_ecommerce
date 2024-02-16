@@ -14,10 +14,8 @@ class HomeScreen extends StatelessWidget {
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 350,
-                    width: double.infinity,
-                  ),
+                  //! Appbar.
+                  THomeAppbar(),
                 ],
               ),
             ),
