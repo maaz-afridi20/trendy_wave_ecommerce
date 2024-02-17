@@ -9,21 +9,25 @@ class NavigationMenu extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode();
     return Scaffold(
       bottomNavigationBar: Obx(
-        () => NavigationBar(
-          selectedIndex: controller.selectedIndex.value,
-          height: 80,
-          elevation: 0,
-          backgroundColor: dark ? TColors.black : TColors.white,
-          indicatorColor: dark ? TColors.black : TColors.white,
-          onDestinationSelected: (index) =>
-              controller.selectedIndex.value = index,
-          destinations: const [
-            // Container(color: Vx.blue400),
-            NavigationDestination(icon: Icon(Iconsax.menu), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-          ],
+        () => ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: NavigationBar(
+            selectedIndex: controller.selectedIndex.value,
+            height: 80,
+            elevation: 0,
+            backgroundColor: dark ? TColors.black : TColors.white,
+            indicatorColor: dark ? TColors.black : TColors.white,
+            onDestinationSelected: (index) =>
+                controller.selectedIndex.value = index,
+            destinations: const [
+              // Container(color: Vx.blue400),
+              NavigationDestination(icon: Icon(Iconsax.menu), label: 'Home'),
+              NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.heart), label: 'Wishlist'),
+              NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+            ],
+          ),
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),

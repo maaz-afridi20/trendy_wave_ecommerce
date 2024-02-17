@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             //! Curved Edges.
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
 
             //! Content below blue part.
             Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              padding: EdgeInsets.all(TSizes.defaultSpace),
               child: TPromoSlider(
                 banners: [
                   TImages.promoBanner1,
