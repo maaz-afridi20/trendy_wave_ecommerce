@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             //! Curved Edges.
@@ -29,10 +29,9 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         //! Heading..
                         TSectionHeading(
-                          title: 'Popular Products',
-                          showActionButton: false,
-                          textColor: TColors.white,
-                        ),
+                            title: 'Popular Products',
+                            showActionButton: false,
+                            textColor: TColors.white),
                         SizedBox(height: TSizes.spaceBtwItems),
 
                         //! Categories..
@@ -40,6 +39,18 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   )
+                ],
+              ),
+            ),
+
+            //! Content below blue part.
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(
+                banners: [
+                  TImages.promoBanner1,
+                  TImages.promoBanner2,
+                  TImages.promoBanner3,
                 ],
               ),
             ),
