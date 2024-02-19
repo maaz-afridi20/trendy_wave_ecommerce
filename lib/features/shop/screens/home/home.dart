@@ -1,3 +1,4 @@
+import 'package:trendy_waves_ecommerce/common/widgets/layouts/grid_layout.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,13 +6,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             //! Curved Edges.
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   //! Appbar.
@@ -45,12 +46,23 @@ class HomeScreen extends StatelessWidget {
 
             //! Content below blue part.
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(
-                banners: [
-                  TImages.promoBanner1,
-                  TImages.promoBanner2,
-                  TImages.promoBanner3,
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const TPromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3,
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+
+                  //
+                  //! Product card.
+                  TGridLayout(
+                      itemCount: 4,
+                      itemBuilder: (_, index) => const TProductCardVertical()),
                 ],
               ),
             ),

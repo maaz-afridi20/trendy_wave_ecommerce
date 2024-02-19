@@ -51,7 +51,7 @@ export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/primary_header_container.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/appbar/appbar.dart';
-export 'package:trendy_waves_ecommerce/common/widgets/products/cart_menu_icon.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/cart/cart_menu_icon.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/home/widgets/home_appbar.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/custom_shapes/containers/search_container.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/texts/section_heading.dart';
@@ -61,3 +61,9 @@ export 'package:trendy_waves_ecommerce/common/widgets/images/t_rounded_image.dar
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:trendy_waves_ecommerce/features/shop/controllers/home_controllers.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/home/widgets/promo_slider.dart';
+export 'package:trendy_waves_ecommerce/common/styles/shadow_style.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/rounded_container/t_rounded_container.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/icon/t_circular_icon.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/texts/product_title_text.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/product_cards/product_cart_vertical.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/texts/product_price_text.dart';
