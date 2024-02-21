@@ -73,3 +73,7 @@ export 'package:trendy_waves_ecommerce/common/widgets/images/t_circular_image.da
 export 'package:trendy_waves_ecommerce/utils/constants/enums.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/texts/t_brand_title_text.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/texts/t_brand_title_with_verified_icon.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/brands/brand_showcase.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/brands/t_brand_card.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/appbar/t_tabbar.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/store/widgets/category_tab.dart';

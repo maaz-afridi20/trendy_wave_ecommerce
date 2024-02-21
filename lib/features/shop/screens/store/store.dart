@@ -6,101 +6,80 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode();
-    return Scaffold(
-      appBar: TAppbar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [
-          TCartCounterIcon(onPressed: () {}),
-        ],
-      ),
-      body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              automaticallyImplyLeading: false,
-              pinned: true,
-              floating: true,
-              backgroundColor: dark ? TColors.black : TColors.white,
-              expandedHeight: 440,
-              flexibleSpace: Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    //! Search bar..
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: TAppbar(
+          title:
+              Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [
+            TCartCounterIcon(onPressed: () {}),
+          ],
+        ),
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                pinned: true,
+                floating: true,
+                backgroundColor: dark ? TColors.black : TColors.white,
+                expandedHeight: 440,
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      //! Search bar..
 
-                    const TSearchContainer(
-                      text: 'Search',
-                      showBorder: true,
-                      showBackground: false,
-                      padding: EdgeInsets.zero,
-                    ),
-                    const SizedBox(height: TSizes.spaceBtwItems),
+                      const TSearchContainer(
+                        text: 'Search',
+                        showBorder: true,
+                        showBackground: false,
+                        padding: EdgeInsets.zero,
+                      ),
+                      const SizedBox(height: TSizes.spaceBtwItems),
 
-                    //! Feaured Brand.
-                    TSectionHeading(title: 'Featured Brands', onPressed: () {}),
-                    const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+                      //! Feaured Brand.
+                      TSectionHeading(
+                          title: 'Featured Brands', onPressed: () {}),
+                      const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
-                    //! Grid layout..
-                    TGridLayout(
-                      itemCount: 4,
-                      mainAxisExtent: 80,
-                      itemBuilder: (_, index) {
-                        return GestureDetector(
-                          onTap: () {},
-                          child: TRoundedContainer(
-                            padding: const EdgeInsets.all(TSizes.sm),
-                            showBorder: true,
-                            backgroundColor: Colors.transparent,
-                            child: Row(
-                              children: [
-                                //!Icon
-                                Flexible(
-                                  child: TCircularImage(
-                                    isNetworkImage: false,
-                                    image: TImages.clothIcon,
-                                    backgroundColor: Colors.transparent,
-                                    overlayColor:
-                                        dark ? TColors.white : TColors.black,
-                                  ),
-                                ),
-                                const SizedBox(
-                                    height: TSizes.spaceBtwItems / 2),
+                      //! Grid layout..
+                      TGridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 70,
+                        itemBuilder: (_, index) {
+                          return const TBrandCard(showBorder: true);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
 
-                                //Text...
-
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const TBrandTitleWithVerifiedIcon(
-                                          title: 'Nike',
-                                          brandTextSizes: TextSizes.large),
-                                      Text('257',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelMedium),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                //! Creating the tabs..
+                bottom: const TTabbar(
+                  tabs: [
+                    Tab(child: Text('Sport')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Clothes')),
+                    Tab(child: Text('Cosmetics')),
                   ],
                 ),
               ),
-            ),
-          ];
-        },
-        body: const SizedBox(
-          child: Text('container.'),
+            ];
+          },
+          body: const TabBarView(
+            children: [
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+            ],
+          ),
         ),
       ),
     );
