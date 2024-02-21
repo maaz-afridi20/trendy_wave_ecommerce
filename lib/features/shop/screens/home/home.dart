@@ -1,4 +1,3 @@
-import 'package:trendy_waves_ecommerce/common/widgets/layouts/grid_layout.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class HomeScreen extends StatelessWidget {
