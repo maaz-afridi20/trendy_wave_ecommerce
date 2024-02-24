@@ -81,3 +81,6 @@ export 'package:trendy_waves_ecommerce/features/shop/screens/wishlist/wishlist.d
 export 'package:trendy_waves_ecommerce/features/personalization/screens/settings/settings.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/listiles/user_profile_tile.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/listiles/settings_menu_tile.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/profile.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/profile_menu.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/controllers/user_controller.dart';

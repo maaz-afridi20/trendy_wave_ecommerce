@@ -3,7 +3,10 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
     super.key,
+    required this.onTap,
   });
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class TUserProfileTile extends StatelessWidget {
             ),
       ),
       trailing: IconButton(
-          onPressed: () {},
+          onPressed: onTap,
           icon: const Icon(Iconsax.edit, color: TColors.white)),
     );
   }
