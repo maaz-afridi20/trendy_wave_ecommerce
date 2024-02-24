@@ -20,9 +20,9 @@ class TCategoryTab extends StatelessWidget {
                   TImages.productImage3
                 ]),
                 const TBrandShowCase(images: [
-                  TImages.productImage1,
-                  TImages.productImage2,
-                  TImages.productImage3
+                  TImages.productImage4,
+                  TImages.productImage5,
+                  TImages.productImage6
                 ]),
 
                 //! products.

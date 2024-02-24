@@ -77,3 +77,7 @@ export 'package:trendy_waves_ecommerce/common/widgets/brands/brand_showcase.dart
 export 'package:trendy_waves_ecommerce/common/widgets/brands/t_brand_card.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/appbar/t_tabbar.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/store/widgets/category_tab.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/wishlist/wishlist.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/settings/settings.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/listiles/user_profile_tile.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/listiles/settings_menu_tile.dart';

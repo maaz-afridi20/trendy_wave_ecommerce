@@ -16,12 +16,16 @@ class NavigationMenu extends StatelessWidget {
             height: 80,
             elevation: 0,
             backgroundColor: dark ? TColors.black : TColors.white,
-            indicatorColor: dark ? TColors.black : TColors.white,
+            indicatorColor:
+                dark ? TColors.black : TColors.primary.withOpacity(0.1),
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
             destinations: const [
               // Container(color: Vx.blue400),
-              NavigationDestination(icon: Icon(Iconsax.menu), label: 'Home'),
+              NavigationDestination(
+                icon: Icon(Iconsax.menu),
+                label: 'Home',
+              ),
               NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
               NavigationDestination(
                   icon: Icon(Iconsax.heart), label: 'Wishlist'),
@@ -41,7 +45,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    Container(color: Colors.yellow),
-    Container(color: Colors.orangeAccent),
+    const FavouriteScreen(),
+    const SettingsScreen(),
   ];
 }
