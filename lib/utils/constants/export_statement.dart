@@ -84,3 +84,4 @@ export 'package:trendy_waves_ecommerce/common/widgets/listiles/settings_menu_til
 export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/profile.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/profile_menu.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/controllers/user_controller.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/controllers/switch_controller.dart';

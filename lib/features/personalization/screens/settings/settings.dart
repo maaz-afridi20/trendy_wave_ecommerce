@@ -1,3 +1,5 @@
+import 'package:trendy_waves_ecommerce/features/personalization/controllers/switch_controller.dart';
+
 import '../../../../utils/constants/export_statement.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -5,10 +7,10 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RxBool isSwitchOn = false.obs;
-    final dark = THelperFunctions.isDarkMode();
+    final switchController = Get.put(SwitchController());
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             //! header
@@ -91,42 +93,13 @@ class SettingsScreen extends StatelessWidget {
                       icon: Iconsax.document_upload,
                       title: 'Load Data',
                       subtitle: 'Upload your data to cloud firestoer'),
-                  TSettingsMenuTile(
-                    icon: Iconsax.location,
-                    title: 'Geo Location',
-                    subtitle: 'Set recommendation based on location',
-                    trailing: Switch(value: true, onChanged: (value) {}),
-                  ),
+                  switchController.buildSwithTile(context, 'Geo Location',
+                      'Set recommendation based on your location', false.obs),
+                  switchController.buildSwithTile(context, 'Safe Mode',
+                      'Search result in safe mode', false.obs),
+                  switchController.buildSwithTile(
+                      context, 'Hd Image', 'Image to be seen', false.obs),
 
-                  Obx(
-                    () => TSettingsMenuTile(
-                      icon: Iconsax.security_user,
-                      title: 'Safe Mode',
-                      subtitle: 'Search results in all safe mode',
-                      trailing: Switch(
-                          value: isSwitchOn.value,
-                          onChanged: (value) {
-                            isSwitchOn.value = value;
-                            String toastMessage =
-                                value ? 'button on' : 'button off';
-
-                            VxToast.show(context,
-                                msg: toastMessage,
-                                pdHorizontal: 100,
-                                textSize: 18,
-                                bgColor:
-                                    dark ? TColors.white : TColors.lightGrey,
-                                textColor: dark ? Colors.white : Colors.black);
-                          }),
-                    ),
-                  ),
-
-                  TSettingsMenuTile(
-                    icon: Iconsax.image,
-                    title: 'HD quality image',
-                    subtitle: 'Set your image quality',
-                    trailing: Switch(value: true, onChanged: (value) {}),
-                  ),
                   32.heightBox,
                   SizedBox(
                       width: double.infinity,
@@ -142,3 +115,31 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+//! My Logic.
+ // Obx(
+                  //   () => TSettingsMenuTile(
+                  //     icon: Iconsax.security_user,
+                  //     title: 'Safe Mode',
+                  //     subtitle: 'Search results in all safe mode',
+                  //     trailing: Switch(
+                  //         value: isSwitchOn.value,
+                  //         onChanged: (value) {
+                  //           isSwitchOn.value = value;
+                  //           String toastMessage =
+                  //               value ? 'button on' : 'button off';
+
+                  //           VxToast.show(context,
+                  //               msg: toastMessage,
+                  //               pdHorizontal: 100,
+                  //               textSize: 18,
+                  //               bgColor:
+                  //                   dark ? TColors.white : TColors.lightGrey,
+                  //               textColor: dark ? Colors.white : Colors.black);
+                  //         }),
+                  //   ),
+                  // ),
