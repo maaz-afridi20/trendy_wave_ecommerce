@@ -5,72 +5,79 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            //! Curved Edges.
-            TPrimaryHeaderContainer(
-              child: Column(
-                children: [
-                  //! Appbar.
-                  const THomeAppbar(),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        THelperFunctions.showAppExitingDialogue(context);
+      },
+      child: Scaffold(
+        body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              //! Curved Edges.
+              const TPrimaryHeaderContainer(
+                child: Column(
+                  children: [
+                    //! Appbar.
+                    THomeAppbar(),
+                    SizedBox(height: TSizes.spaceBtwSections),
 
-                  //! Search Bar.
-                  const TSearchContainer(text: 'Search In Store...'),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                    //! Search Bar.
+                    TSearchContainer(text: 'Search In Store...'),
+                    SizedBox(height: TSizes.spaceBtwSections),
 
-                  //! Categories.
-                  Padding(
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
-                    child: Column(
-                      children: [
-                        //! Heading..
-                        const TSectionHeading(
-                            title: 'Popular Products',
-                            showActionButton: false,
-                            textColor: TColors.white),
-                        const SizedBox(height: TSizes.spaceBtwItems),
+                    //! Categories.
+                    Padding(
+                      padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                      child: Column(
+                        children: [
+                          //! Heading..
+                          TSectionHeading(
+                              title: 'Popular Products',
+                              showActionButton: false,
+                              textColor: TColors.white),
+                          SizedBox(height: TSizes.spaceBtwItems),
 
-                        //! Categories..
-                        const THomeCategories(),
-                        32.heightBox,
+                          //! Categories..
+                          THomeCategories(),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+              //! Content below blue part.
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    const TPromoSlider(
+                      banners: [
+                        TImages.promoBanner1,
+                        TImages.promoBanner2,
+                        TImages.promoBanner3,
                       ],
                     ),
-                  )
-                ],
+                    const SizedBox(height: TSizes.spaceBtwSections),
+
+                    TSectionHeading(
+                        title: 'Popular Products', onPressed: () {}),
+                    const SizedBox(height: TSizes.spaceBtwItems),
+
+                    //
+                    //! Product card.
+                    // popular products.
+                    TGridLayout(
+                        itemCount: 4,
+                        itemBuilder: (_, index) =>
+                            const TProductCardVertical()),
+                  ],
+                ),
               ),
-            ),
-
-            //! Content below blue part.
-            Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  const TPromoSlider(
-                    banners: [
-                      TImages.promoBanner1,
-                      TImages.promoBanner2,
-                      TImages.promoBanner3,
-                    ],
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwSections),
-
-                  TSectionHeading(title: 'Popular Products', onPressed: () {}),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-
-                  //
-                  //! Product card.
-                  // popular products.
-                  TGridLayout(
-                      itemCount: 4,
-                      itemBuilder: (_, index) => const TProductCardVertical()),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

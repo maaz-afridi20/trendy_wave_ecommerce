@@ -42,7 +42,8 @@ class THelperFunctions {
     );
   }
 
-  static void showAlert(String title, String message) {
+  static void showAlert(
+      String title, String message, VoidCallback onConfirmPressed) {
     showDialog(
       context: Get.context!,
       builder: (BuildContext context) {
@@ -52,7 +53,59 @@ class THelperFunctions {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => onConfirmPressed,
               child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  onBackButtonPressed(BuildContext context) async {
+    bool? exitApp = await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('confirm'),
+          content: const Text('really'),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: const Text('okk')),
+            TextButton(
+                onPressed: () => SystemNavigator.pop(),
+                child: const Text('yess')),
+          ],
+        );
+      },
+    );
+    return exitApp ?? false;
+  }
+//
+//
+
+  static void showAppExitingDialogue(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Do you want to close the app'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                SystemNavigator.pop();
+              },
+              child: const Text('Confirm'),
             ),
           ],
         );
