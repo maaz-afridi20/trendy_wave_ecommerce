@@ -8,6 +8,7 @@ class TProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode();
+    RxBool isLiked = false.obs;
     return TCurvedEdgesWidget(
       child: Container(
         color: dark ? TColors.darkGrey : TColors.light,
@@ -52,9 +53,19 @@ class TProductImageSlider extends StatelessWidget {
             ),
 
             //! appbar icons...
-            const TAppbar(
+            TAppbar(
               showBackArrow: true,
-              actions: [TCircularIcon(icon: Iconsax.heart5, color: Colors.red)],
+              actions: [
+                Obx(() => TCircularIcon(
+                    onPress: () {
+                      isLiked.value = !isLiked.value;
+                      THelperFunctions.showSnackBar(isLiked.value
+                          ? 'added to favourites'
+                          : 'removed from favourites');
+                    },
+                    icon: Iconsax.heart5,
+                    color: isLiked.value ? Colors.red : TColors.grey)),
+              ],
             ),
           ],
         ),
