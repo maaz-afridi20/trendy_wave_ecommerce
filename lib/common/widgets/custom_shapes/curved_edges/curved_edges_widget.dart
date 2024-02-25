@@ -1,7 +1,7 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TCurvedEdgesWidget extends StatelessWidget {
-  const TCurvedEdgesWidget({super.key, this.child});
+  const TCurvedEdgesWidget({super.key, required this.child});
 
   final Widget? child;
 

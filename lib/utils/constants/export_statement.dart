@@ -85,3 +85,7 @@ export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/
 export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/profile_menu.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/controllers/user_controller.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/controllers/switch_controller.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/product_details.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_meta_data.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/rating_share_widget.dart';

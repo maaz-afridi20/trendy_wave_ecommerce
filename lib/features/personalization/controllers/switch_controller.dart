@@ -14,13 +14,17 @@ class SwitchController extends GetxController {
             value: switchValue.value,
             onChanged: (value) {
               switchValue.value = value;
-              Get.snackbar(
-                  value ? '$title on' : '$title off', value ? subtitle : '',
-                  snackPosition: SnackPosition.BOTTOM,
-                  colorText: dark ? Colors.white : Colors.black,
-                  backgroundColor: dark ? TColors.white : TColors.lightGrey);
+              THelperFunctions.showSnackBar(value ? '$title on' : '$title off');
             }),
       ),
     );
   }
 }
+
+
+
+      // Get.snackbar(
+              //     value ? '$title on' : '$title off', value ? subtitle : '',
+              //     snackPosition: SnackPosition.BOTTOM,
+              //     colorText: dark ? Colors.white : Colors.black,
+              //     backgroundColor: dark ? TColors.white : TColors.lightGrey);

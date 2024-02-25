@@ -1,5 +1,3 @@
-import 'package:trendy_waves_ecommerce/features/personalization/controllers/switch_controller.dart';
-
 import '../../../../utils/constants/export_statement.dart';
 
 class SettingsScreen extends StatelessWidget {
