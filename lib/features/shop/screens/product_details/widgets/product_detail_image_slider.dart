@@ -44,7 +44,7 @@ class TProductImageSlider extends StatelessWidget {
                         padding: const EdgeInsets.all(TSizes.sm),
                         backgroundColor: dark ? TColors.dark : TColors.white,
                         border: Border.all(color: TColors.primary),
-                        imageUrl: TImages.productImage3),
+                        imageUrl: TImages.productImage4),
                     separatorBuilder: (_, __) => const SizedBox(
                           width: TSizes.spaceBtwItems,
                         ),

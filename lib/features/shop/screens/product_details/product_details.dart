@@ -7,6 +7,7 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             //! Product Image Slider..
@@ -28,6 +29,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   TProductMetaData(),
 
                   // attributes..
+                  TProductAttributes(),
 
                   // checkout..
 

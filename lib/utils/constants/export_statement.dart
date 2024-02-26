@@ -89,3 +89,6 @@ export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/pro
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_meta_data.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/chips/choice_chip.dart';
+export 'package:trendy_waves_ecommerce/features/shop/controllers/product_details_controller/chip_controller.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_attribute.dart';
