@@ -92,3 +92,5 @@ export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/wid
 export 'package:trendy_waves_ecommerce/common/widgets/chips/choice_chip.dart';
 export 'package:trendy_waves_ecommerce/features/shop/controllers/product_details_controller/chip_controller.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_attribute.dart';
+export 'package:readmore/readmore.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
