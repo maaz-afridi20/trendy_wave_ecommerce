@@ -94,3 +94,9 @@ export 'package:trendy_waves_ecommerce/features/shop/controllers/product_details
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/product_attribute.dart';
 export 'package:readmore/readmore.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/product_reviews.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/widgets/progress_indicator_and_rating.dart';
+export 'package:flutter_rating_bar/flutter_rating_bar.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/ratings/rating_indicator.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/widgets/user_review_card.dart';

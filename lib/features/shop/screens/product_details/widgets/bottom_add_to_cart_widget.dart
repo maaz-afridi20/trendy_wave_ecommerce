@@ -55,13 +55,20 @@ class TBottomAddToCartWidget extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(TSizes.md),
-                backgroundColor: TColors.black,
-                side: const BorderSide(color: TColors.black),
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.all(TSizes.md),
+              backgroundColor: TColors.black,
+              side: const BorderSide(color: TColors.black),
+            ),
+            child: const SizedBox(
+              width: 110,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Icon(Iconsax.bag_2), Text('Add to bag')],
               ),
-              child: const Text('Add to cart'))
+            ),
+          )
         ],
       ),
     );

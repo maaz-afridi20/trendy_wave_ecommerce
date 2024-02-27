@@ -61,12 +61,15 @@ dependencies:
   # product related
   carousel_slider: ^4.2.1
   readmore: ^2.2.0
+  flutter_rating_bar: ^4.0.1
+
+
 
 
   lottie: ^2.7.0
 
 
-  flutter_rating_bar: ^4.0.1
+ 
   connectivity_plus: ^5.0.2
   google_sign_in: ^6.2.1
   cached_network_image: ^3.3.1
