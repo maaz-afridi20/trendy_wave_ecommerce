@@ -2,12 +2,10 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TCartCounterIcon extends StatelessWidget {
   const TCartCounterIcon({
-    required this.onPressed,
     this.iconColor,
     super.key,
   });
 
-  final VoidCallback onPressed;
   final Color? iconColor;
 
   @override
@@ -15,7 +13,7 @@ class TCartCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-            onPressed: onPressed,
+            onPressed: () => Get.to(() => const CartScreen()),
             icon: Icon(Iconsax.shopping_bag, color: iconColor)),
         Positioned(
           right: 0,

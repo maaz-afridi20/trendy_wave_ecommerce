@@ -104,3 +104,6 @@ export 'package:trendy_waves_ecommerce/common/widgets/texts/read_more.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/screens/address/add_new_address.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/screens/address/address.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/screens/address/widgets/single_address.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/cart/cart.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/cart/widgets/t_cart_items.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/cart/add_remove_button.dart';
