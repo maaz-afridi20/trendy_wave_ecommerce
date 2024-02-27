@@ -107,3 +107,12 @@ export 'package:trendy_waves_ecommerce/features/personalization/screens/address/
 export 'package:trendy_waves_ecommerce/features/shop/screens/cart/cart.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/cart/widgets/t_cart_items.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/products/cart/add_remove_button.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/cart/widgets/cart_items.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/checkout/checkout.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/cart/coupon_widget.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/checkout/widgets/billing_amount_section.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/checkout/widgets/billing_address_section.dart';
+export 'package:trendy_waves_ecommerce/navigation_menu.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/screens/password_configuration/forget_password.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/signup_screen.dart';
