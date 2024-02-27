@@ -100,3 +100,7 @@ export 'package:flutter_rating_bar/flutter_rating_bar.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/products/ratings/rating_indicator.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/product_reviews/widgets/user_review_card.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/texts/read_more.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/address/add_new_address.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/address/address.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/address/widgets/single_address.dart';

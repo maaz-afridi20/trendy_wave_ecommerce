@@ -43,17 +43,11 @@ class ProductDetailsScreen extends StatelessWidget {
                   const TSectionHeading(
                       title: 'Description', showActionButton: false),
                   16.heightBox,
-                  const ReadMoreText(
-                    "the QuantumGlow LuminoSphere, a cutting-edge illuminating marvel that will redefine your perception of light. This sleek orb seamlessly blends advanced LED technology with futuristic design.",
-                    trimLines: 2,
-                    trimMode: TrimMode.Line,
-                    trimExpandedText: ' Show less',
-                    trimCollapsedText: ' Show more',
-                    moreStyle: TextStyle(
-                        color: TColors.primary, fontWeight: FontWeight.w800),
-                    lessStyle: TextStyle(
-                        color: TColors.primary, fontWeight: FontWeight.w800),
-                  ),
+                  const TReadmoreWidget(
+                      text:
+                          "the QuantumGlow LuminoSphere, a cutting-edge illuminating marvel that will redefine your perception of light. This sleek orb seamlessly blends advanced LED technology with futuristic design.",
+                      trimLines: 2),
+
                   const Divider(),
                   16.heightBox,
                   Row(

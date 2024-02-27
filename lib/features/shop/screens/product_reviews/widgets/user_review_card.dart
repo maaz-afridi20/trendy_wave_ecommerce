@@ -39,20 +39,10 @@ class UserReviewCard extends StatelessWidget {
         //
         //! Description...
 
-        const ReadMoreText(
-          'This app is very good and simple to use i will recommend that you use the following application instead of the default application you are using the default application.',
+        const TReadmoreWidget(
+          text:
+              "This app is very good and simple to use i will recommend that you use the following application instead of the default application you are using the default application.",
           trimLines: 1,
-          trimExpandedText: ' show less',
-          trimCollapsedText: ' show more',
-          moreStyle: TextStyle(
-              color: TColors.primary,
-              fontSize: 14,
-              fontWeight: FontWeight.bold),
-          lessStyle: TextStyle(
-              color: TColors.primary,
-              fontSize: 14,
-              fontWeight: FontWeight.bold),
-          trimMode: TrimMode.Line,
         ),
         16.heightBox,
 
@@ -75,21 +65,10 @@ class UserReviewCard extends StatelessWidget {
                   ],
                 ),
                 16.heightBox,
-                const ReadMoreText(
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumnihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,or, harum nesciunt ipsum debitis quas aliquid",
-                  trimLines: 1,
-                  trimExpandedText: ' show less',
-                  trimCollapsedText: ' show more',
-                  moreStyle: TextStyle(
-                      color: TColors.primary,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                  lessStyle: TextStyle(
-                      color: TColors.primary,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                  trimMode: TrimMode.Line,
-                ),
+                const TReadmoreWidget(
+                    text:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumnihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,or, harum nesciunt ipsum debitis quas aliquid",
+                    trimLines: 1),
               ],
             ),
           ),
