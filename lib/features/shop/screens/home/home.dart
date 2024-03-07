@@ -1,3 +1,4 @@
+import 'package:trendy_waves_ecommerce/features/shop/screens/all_products/all_products.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -63,7 +64,8 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwSections),
 
                     TSectionHeading(
-                        title: 'Popular Products', onPressed: () {}),
+                        title: 'Popular Products',
+                        onPressed: () => Get.to(() => const AllProducts())),
                     const SizedBox(height: TSizes.spaceBtwItems),
 
                     //
