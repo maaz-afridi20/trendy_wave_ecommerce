@@ -43,7 +43,9 @@ class StoreScreen extends StatelessWidget {
 
                       //! Feaured Brand.
                       TSectionHeading(
-                          title: 'Featured Brands', onPressed: () {}),
+                          title: 'Featured Brands',
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                       //! Grid layout..

@@ -120,3 +120,6 @@ export 'package:trendy_waves_ecommerce/features/shop/screens/orders/order.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/orders/widgets/order_list.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/sub_categories/sub_categories.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/products/product_cards/product_card_horizontal.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/brands/all_brands.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/sortable/sortable_products.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/brands/brand_product.dart';
