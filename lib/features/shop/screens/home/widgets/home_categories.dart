@@ -18,7 +18,7 @@ class THomeCategories extends StatelessWidget {
           return TVerticalImageText(
             image: TImages.shoeIcon,
             title: 'Shoes Icon',
-            onMTap: () {},
+            onMTap: () => Get.to(() => const SubCategoriesScren()),
           );
         },
       ),

@@ -118,3 +118,5 @@ export 'package:trendy_waves_ecommerce/features/authentications/screens/password
 export 'package:trendy_waves_ecommerce/features/authentications/screens/sign_up/signup_screen.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/orders/order.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/orders/widgets/order_list.dart';
+export 'package:trendy_waves_ecommerce/features/shop/screens/sub_categories/sub_categories.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/products/product_cards/product_card_horizontal.dart';
