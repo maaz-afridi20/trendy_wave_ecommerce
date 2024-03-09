@@ -123,3 +123,7 @@ export 'package:trendy_waves_ecommerce/common/widgets/products/product_cards/pro
 export 'package:trendy_waves_ecommerce/features/shop/screens/brands/all_brands.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/products/sortable/sortable_products.dart';
 export 'package:trendy_waves_ecommerce/features/shop/screens/brands/brand_product.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:trendy_waves_ecommerce/firebase_options.dart';
+export 'package:flutter_native_splash/flutter_native_splash.dart';
+export 'package:trendy_waves_ecommerce/data/repositories/authentication_repository/authentication_repository.dart';

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "354725148927",
+    "project_id": "trendy-waves-ecommerce",
+    "storage_bucket": "trendy-waves-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354725148927:android:dbfc519ee04a55aea7b4ca",
+        "android_client_info": {
+          "package_name": "com.example.trendy_waves_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354725148927-6c7qcgp73dmii6o2m9bkc1m693bp5tfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trendy_waves_ecommerce",
+            "certificate_hash": "6aa771156ee42b54de4daee5874d98ff4ea6aef2"
+          }
+        },
+        {
+          "client_id": "354725148927-tmmdm66nh0sivgc77h9n1oe1s0f5nuja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC89pVaJoZHQNgUyp3kG_4gJ-_sH0aDzKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354725148927-tmmdm66nh0sivgc77h9n1oe1s0f5nuja.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "354725148927-1n2bq41s83ro6nbna95msf2chhvv39ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trendyWavesEcommerce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
