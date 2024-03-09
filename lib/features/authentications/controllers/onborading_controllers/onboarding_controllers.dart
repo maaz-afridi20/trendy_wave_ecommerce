@@ -23,10 +23,6 @@ class OnBoardingControllers extends GetxController {
       final storage = GetStorage();
       storage.write('isFirstTime', false);
       Get.offAll(() => const LoginScreen());
-      if (kDebugMode) {
-        print('.............get storage next button.......');
-        print(storage.read('isFirstTime'));
-      }
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

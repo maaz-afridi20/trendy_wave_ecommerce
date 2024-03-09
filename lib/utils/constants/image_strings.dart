@@ -259,4 +259,39 @@ class TImages {
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon =
       "assets/icons/payment_methods/successful_payment_icon.png";
+
+  // Animationss...
+
+  static const String emptyAnimation =
+      "assets/images/animations/53207-empty-file.json";
+  static const String securityIcon =
+      "assets/images/animations/67263-security-icon-transparent.json";
+  static const String cgeckRegister =
+      "assets/images/animations/72785-check-register.json";
+  static const String serachingJson =
+      "assets/images/animations/72785-searching.json";
+  static const String packingInProgress =
+      "assets/images/animations/98783-packaging-in-progress.json";
+  static const String thankJson =
+      "assets/images/animations/104368-thank-you.json";
+  static const String orderCompleteCartAnimation =
+      "assets/images/animations/ordercompletecaranimation.json";
+  static const String loaderAnimation =
+      "assets/images/animations/loader-animation.json";
+  static const String ladyAddingProduct =
+      "assets/images/animations/lady-adding-product-in-cart-animation.json";
+  static const String cloudUploadingAnimation =
+      "assets/images/animations/cloud-uploading-animation.json";
+  static const String docerAnimation =
+      "assets/images/animations/141594-animation-of-docer.json";
+  static const String loadingJuggle =
+      "assets/images/animations/141397-loading-juggle.json";
+  static const String pencilDrwaing =
+      "assets/images/animations/140429-pencil-drawing.json";
+  static const String cartRides =
+      "assets/images/animations/136491-animation-lottie-car-rides.json";
+  static const String paymentSuccessful =
+      "assets/images/animations/120978-payment-successful.json";
+  static const String paperPlane =
+      "assets/images/animations/110052-paper-plane.json";
 }

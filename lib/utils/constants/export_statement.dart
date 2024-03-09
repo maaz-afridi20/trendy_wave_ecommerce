@@ -128,3 +128,7 @@ export 'package:trendy_waves_ecommerce/firebase_options.dart';
 export 'package:flutter_native_splash/flutter_native_splash.dart';
 export 'package:trendy_waves_ecommerce/data/repositories/authentication_repository/authentication_repository.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/controllers/signup_controllers/signup_controller.dart';
+export 'package:trendy_waves_ecommerce/utils/validators/validation.dart';
+export 'package:trendy_waves_ecommerce/utils/popups/full_screen_loader.dart';
+export 'package:trendy_waves_ecommerce/common/widgets/loaders/animation_loader.dart';
+export 'package:lottie/lottie.dart';

@@ -1,5 +1,4 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
-import 'package:trendy_waves_ecommerce/utils/validators/validation.dart';
 
 class TSignUpForm extends StatelessWidget {
   const TSignUpForm({
@@ -110,9 +109,7 @@ class TSignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                if (controller.signupFormKey.currentState!.validate()) {}
-              },
+              onPressed: () => controller.signUp(),
               child: const Text(TTexts.createAccount),
             ),
           ),
@@ -123,3 +120,5 @@ class TSignUpForm extends StatelessWidget {
 }
 
 // Get.to(() => const VerifyEmailScreen())
+
+//  if (controller.signupFormKey.currentState!.validate()) {}
