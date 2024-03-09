@@ -33,7 +33,7 @@ export 'package:trendy_waves_ecommerce/features/authentications/screens/onboardi
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/onboarding/widgets/on_boarding_dot_navigation.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/screens/onboarding/widgets/on_boarding_next_button.dart';
-export 'package:trendy_waves_ecommerce/features/authentications/onborading_controllers/onboarding_controllers.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/controllers/onborading_controllers/onboarding_controllers.dart';
 export 'package:trendy_waves_ecommerce/common/styles/spacing_style.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/login_signup/form_divider.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/login_signup/social_buttons.dart';
@@ -127,3 +127,4 @@ export 'package:firebase_core/firebase_core.dart';
 export 'package:trendy_waves_ecommerce/firebase_options.dart';
 export 'package:flutter_native_splash/flutter_native_splash.dart';
 export 'package:trendy_waves_ecommerce/data/repositories/authentication_repository/authentication_repository.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/controllers/signup_controllers/signup_controller.dart';

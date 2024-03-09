@@ -20,7 +20,13 @@ class OnBoardingControllers extends GetxController {
   //! Update the current index and jump to next page.
   void nextPage() {
     if (currentPageIndex.value == 2) {
+      final storage = GetStorage();
+      storage.write('isFirstTime', false);
       Get.offAll(() => const LoginScreen());
+      if (kDebugMode) {
+        print('.............get storage next button.......');
+        print(storage.read('isFirstTime'));
+      }
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
