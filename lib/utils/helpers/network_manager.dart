@@ -20,7 +20,11 @@ class NetworkManager extends GetxController {
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
     if (_connectionStatus.value == ConnectivityResult.none) {
-      TLoaders.warningSnackbar(title: 'No Internet Connection');
+      TLoaders.customToast(
+          message: 'Internet Connection Lost', color: Colors.orange);
+    } else {
+      TLoaders.customToast(
+          message: 'Internet Connection Restored', color: TColors.white);
     }
   }
 

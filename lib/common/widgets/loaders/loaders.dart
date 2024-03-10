@@ -49,7 +49,7 @@ class TLoaders {
     );
   }
 
-  static customToast({required message}) {
+  static customToast({required message, required color}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
@@ -57,14 +57,17 @@ class TLoaders {
         backgroundColor: Colors.transparent,
         content: Container(
           padding: const EdgeInsets.all(12),
+          width: double.infinity,
           margin: const EdgeInsets.symmetric(horizontal: 30),
-          // decoration: BoxDecoration(
-          //     borderRadius: BorderRadius.circular(30),
-          //     color: THelperFunction.isDarkMode(Get.context!)
-          //         ? TColors.darkerGrey.withOpacity(0.9)
-          //         : TColors.white),
-          child:
-              Text(message, style: Theme.of(Get.context!).textTheme.labelLarge),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: THelperFunctions.isDarkMode()
+                  ? TColors.darkerGrey.withOpacity(0.9)
+                  : color),
+          child: Center(
+            child: Text(message,
+                style: Theme.of(Get.context!).textTheme.labelLarge),
+          ),
         ),
       ),
     );

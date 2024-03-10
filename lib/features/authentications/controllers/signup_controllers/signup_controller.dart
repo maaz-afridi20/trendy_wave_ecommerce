@@ -13,6 +13,7 @@ class SignupController extends GetxController {
   final phoneNumber = TextEditingController();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
   final RxBool isObsecure = false.obs;
+  final RxBool privacyPolicy = true.obs;
 
   //Signup..
 
@@ -25,13 +26,23 @@ class SignupController extends GetxController {
       //! check the internet connection
 
       final isConnected = await NetworkManager.instance.isConnected();
-
-      if (!isConnected) return;
+      if (isConnected == !true) {
+        TLoaders.customToast(
+            message: 'No Internet Connection', color: Colors.orange);
+        return;
+      }
 
       //! form validation
       if (!signupFormKey.currentState!.validate()) return;
 
-      // check privacy policy
+      //! check privacy policy
+      if (!privacyPolicy.value) {
+        TLoaders.warningSnackbar(
+            title: 'Privacy Policy',
+            message:
+                'In order to create your have to accept terms and conditions');
+        return;
+      }
 
       // register the user and save the data in firebase
 
