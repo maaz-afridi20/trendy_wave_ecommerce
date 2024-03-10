@@ -18,13 +18,18 @@ class SignupController extends GetxController {
 
   Future<void> signUp() async {
     try {
-      // start loading
+      //! start loading
       TFullScreenLoader.openLoading(
           'We are processing your info...', TImages.docerAnimation);
 
-      // check the internet connection
+      //! check the internet connection
 
-      // form validation
+      final isConnected = await NetworkManager.instance.isConnected();
+
+      if (!isConnected) return;
+
+      //! form validation
+      if (!signupFormKey.currentState!.validate()) return;
 
       // check privacy policy
 
@@ -35,8 +40,10 @@ class SignupController extends GetxController {
       // move to email verification screen
     } catch (e) {
       // show some error message if there is error.
+      TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());
     } finally {
       // remove the loader.
+      TFullScreenLoader.stopLoading();
     }
   }
 }

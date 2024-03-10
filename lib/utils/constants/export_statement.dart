@@ -132,3 +132,6 @@ export 'package:trendy_waves_ecommerce/utils/validators/validation.dart';
 export 'package:trendy_waves_ecommerce/utils/popups/full_screen_loader.dart';
 export 'package:trendy_waves_ecommerce/common/widgets/loaders/animation_loader.dart';
 export 'package:lottie/lottie.dart';
+export 'package:shared_preferences/shared_preferences.dart';
+export 'package:trendy_waves_ecommerce/utils/helpers/network_manager.dart';
+export 'package:trendy_waves_ecommerce/bindings/general_bindings.dart';

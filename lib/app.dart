@@ -11,8 +11,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      // initialBinding: GeneralBindings(),
-      // home: const OnBoardingScreen(),
+      initialBinding: GeneralBinding(),
       home: const Scaffold(
         backgroundColor: TColors.primary,
         body: Center(

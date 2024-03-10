@@ -16,11 +16,6 @@ class AuthenticationRespsitory extends GetxController {
   }
 
   screenRedirect() async {
-    if (kDebugMode) {
-      print('.............get storage auth repo.........');
-      print(deviceStorage.read('isFirstTime'));
-    }
-
     // local storage.
     deviceStorage.writeIfNull('isFirstTime', true);
     deviceStorage.read('isFirstTime') != true
