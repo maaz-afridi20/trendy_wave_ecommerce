@@ -12,7 +12,7 @@ class SignupController extends GetxController {
   final userName = TextEditingController();
   final phoneNumber = TextEditingController();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
-  final RxBool isObsecure = false.obs;
+  final RxBool isObsecure = true.obs;
   final RxBool privacyPolicy = true.obs;
 
   //Signup..
@@ -46,9 +46,33 @@ class SignupController extends GetxController {
 
       // register the user and save the data in firebase
 
-      // show success message
+      final userCredentials = await AuthenticationRespsitory.instance
+          .registerWithEmailAndPassword(
+              email.text.trim(), password.text.trim());
 
-      // move to email verification screen
+      // show authenticated user data in firebase(jo create ho gya ho.. wo wla user)
+
+      final newUser = UserModel(
+        id: userCredentials.user!.uid,
+        email: email.text.trim(),
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        userName: userName.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        profilePicture: '',
+      );
+
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserData(newUser);
+
+      //! show success message
+      TLoaders.successSnackbar(
+          title: 'Congratulations',
+          message:
+              'Your account has been successfully created. verify your email address to continue');
+
+      //! move to email verification screen
+      Get.to(() => const VerifyEmailScreen());
     } catch (e) {
       // show some error message if there is error.
       TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());

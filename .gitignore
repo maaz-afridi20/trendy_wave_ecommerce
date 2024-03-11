@@ -1,3 +1,6 @@
+/assets/
+.pubspec.yaml
+.pubspec.lock
 # Miscellaneous
 *.class
 *.log
