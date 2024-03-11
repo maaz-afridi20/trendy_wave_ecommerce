@@ -27,8 +27,7 @@ class SignupController extends GetxController {
 
       final isConnected = await NetworkManager.instance.isConnected();
       if (isConnected == !true) {
-        TLoaders.customToast(
-            message: 'No Internet Connection', color: Colors.orange);
+        TLoaders.customToast(message: 'No Internet Connection');
         return;
       }
 

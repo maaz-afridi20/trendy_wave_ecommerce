@@ -49,7 +49,7 @@ class TLoaders {
     );
   }
 
-  static customToast({required message, required color}) {
+  static customToast({required message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
@@ -60,10 +60,10 @@ class TLoaders {
           width: double.infinity,
           margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(8),
               color: THelperFunctions.isDarkMode()
                   ? TColors.darkerGrey.withOpacity(0.9)
-                  : color),
+                  : TColors.dark),
           child: Center(
             child: Text(message,
                 style: Theme.of(Get.context!).textTheme.labelLarge),
