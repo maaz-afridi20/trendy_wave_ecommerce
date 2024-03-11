@@ -66,7 +66,10 @@ class TLoaders {
                   : TColors.dark),
           child: Center(
             child: Text(message,
-                style: Theme.of(Get.context!).textTheme.labelLarge),
+                style: Theme.of(Get.context!)
+                    .textTheme
+                    .labelLarge!
+                    .apply(color: TColors.light)),
           ),
         ),
       ),

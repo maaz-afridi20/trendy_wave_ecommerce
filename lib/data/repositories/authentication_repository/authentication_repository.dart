@@ -35,6 +35,8 @@ class AuthenticationRespsitory extends GetxController {
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code);
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code);
     } on FormatException catch (_) {
       throw const TFormatException();
     } on PlatformException catch (e) {
