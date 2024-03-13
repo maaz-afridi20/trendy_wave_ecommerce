@@ -118,7 +118,3 @@ class TSignUpForm extends StatelessWidget {
     );
   }
 }
-
-// Get.to(() => const VerifyEmailScreen())
-
-//  if (controller.signupFormKey.currentState!.validate()) {}

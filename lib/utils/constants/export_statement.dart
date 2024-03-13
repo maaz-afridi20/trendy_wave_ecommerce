@@ -144,3 +144,4 @@ export 'package:trendy_waves_ecommerce/utils/exceptions/platform_exceptions.dart
 export 'package:trendy_waves_ecommerce/utils/formatters/formatter.dart';
 export 'package:trendy_waves_ecommerce/data/repositories/user_repository/user_repository.dart';
 export 'package:trendy_waves_ecommerce/utils/exceptions/firebase_auth_exceptions.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/controllers/login_controllers/login_controllers.dart';

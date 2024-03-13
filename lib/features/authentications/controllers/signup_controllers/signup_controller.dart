@@ -20,26 +20,32 @@ class SignupController extends GetxController {
   Future<void> signUp() async {
     try {
       //! start loading
-      TFullScreenLoader.openLoading(
-          'We are processing your info...', TImages.docerAnimation);
+      // TFullScreenLoader.openLoading(
+      //     'We are processing your info...', TImages.docerAnimation);
 
       //! check the internet connection
 
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) {
+      if (isConnected == !true) {
+        TFullScreenLoader.stopLoading();
         TLoaders.customToast(message: 'No Internet Connection');
+        if (kDebugMode) print(isConnected);
         return;
       }
 
       //! form validation
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
+        return;
+      }
 
       //! check privacy policy
       if (!privacyPolicy.value) {
+        TFullScreenLoader.stopLoading();
         TLoaders.warningSnackbar(
             title: 'Privacy Policy',
             message:
-                'In order to create your have to accept terms and conditions');
+                'In order to create your account you have to accept terms and conditions');
         return;
       }
 
@@ -64,6 +70,8 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserData(newUser);
 
+      TFullScreenLoader.stopLoading();
+
       //! show success message
       TLoaders.successSnackbar(
           title: 'Congratulations',
@@ -73,9 +81,8 @@ class SignupController extends GetxController {
       //! move to email verification screen
       Get.to(() => const VerifyEmailScreen());
     } catch (e) {
-      // show some error message if there is error.
       TFullScreenLoader.stopLoading();
-      TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());
+      TLoaders.customToast(message: 'No internet connection');
     }
   }
 }
