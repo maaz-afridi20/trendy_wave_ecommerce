@@ -20,8 +20,8 @@ class SignupController extends GetxController {
   Future<void> signUp() async {
     try {
       //! start loading
-      // TFullScreenLoader.openLoading(
-      //     'We are processing your info...', TImages.docerAnimation);
+      TFullScreenLoader.openLoading(
+          'We are processing your info...', TImages.docerAnimation);
 
       //! check the internet connection
 

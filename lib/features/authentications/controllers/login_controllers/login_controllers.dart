@@ -44,7 +44,7 @@ class LoginController extends GetxController {
           title: 'Congratulations', message: 'Successfully Logged In');
 
       //
-      Get.offAll(() => const NavigationMenu());
+      Get.to(() => const NavigationMenu());
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());
