@@ -96,4 +96,16 @@ class AuthenticationRespsitory extends GetxController {
 // valid for any user..
 
 // delete the user and firestore account.
+
+// logOut the user.
+
+  Future<void> logOut() async {
+    try {
+      await _auth.signOut();
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code);
+    } catch (e) {
+      TLoaders.errorSnackbar(title: "Opss", message: e.toString());
+    }
+  }
 }

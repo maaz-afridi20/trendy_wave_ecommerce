@@ -1,17 +1,20 @@
 import 'package:flutter/cupertino.dart';
+
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
-
+  const VerifyEmailScreen({super.key, this.email});
+  final String? email;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.offAll(() => const LoginScreen()),
+            onPressed: () =>
+                Get.offAll(() => AuthenticationRespsitory.instance.logOut()),
             icon: const Icon(CupertinoIcons.clear),
           )
         ],
@@ -33,7 +36,7 @@ class VerifyEmailScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center),
               16.heightBox,
-              Text('example@gmail.com',
+              Text(email ?? '',
                   style: Theme.of(context).textTheme.labelLarge,
                   textAlign: TextAlign.center),
               16.heightBox,
@@ -46,19 +49,15 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () => Get.to(() => SuccessScreen(
-                            image: TImages.staticSuccessIllustration,
-                            title: TTexts.yourAccountCreatedTitle,
-                            subTitle: TTexts.yourAccountCreatedTitle,
-                            onPressed: () =>
-                                Get.offAll(() => const LoginScreen()),
-                          )),
+                      onPressed: () => Get.to(
+                          () => controller.checkEmailVerificationStatus()),
                       child: const Text(TTexts.tContinue))),
               16.heightBox,
               SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                      onPressed: () {}, child: const Text(TTexts.resendEmail))),
+                      onPressed: () => controller.sendEmailVerification(),
+                      child: const Text(TTexts.resendEmail))),
             ],
           ),
         ),

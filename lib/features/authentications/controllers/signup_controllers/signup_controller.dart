@@ -27,7 +27,6 @@ class SignupController extends GetxController {
 
       final isConnected = await NetworkManager.instance.isConnected();
       if (isConnected == !true) {
-        TFullScreenLoader.stopLoading();
         TLoaders.customToast(message: 'No Internet Connection');
         if (kDebugMode) print(isConnected);
         return;
@@ -35,13 +34,11 @@ class SignupController extends GetxController {
 
       //! form validation
       if (!signupFormKey.currentState!.validate()) {
-        TFullScreenLoader.stopLoading();
         return;
       }
 
       //! check privacy policy
       if (!privacyPolicy.value) {
-        TFullScreenLoader.stopLoading();
         TLoaders.warningSnackbar(
             title: 'Privacy Policy',
             message:
@@ -79,7 +76,7 @@ class SignupController extends GetxController {
               'Your account has been successfully created. verify your email address to continue');
 
       //! move to email verification screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.customToast(message: 'No internet connection');
