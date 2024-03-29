@@ -13,8 +13,7 @@ class VerifyEmailScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () =>
-                Get.offAll(() => AuthenticationRespsitory.instance.logOut()),
+            onPressed: () => AuthenticationRespsitory.instance.logOut(),
             icon: const Icon(CupertinoIcons.clear),
           )
         ],
@@ -49,8 +48,8 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () => Get.to(
-                          () => controller.checkEmailVerificationStatus()),
+                      onPressed: () =>
+                          controller.checkEmailVerificationStatus(),
                       child: const Text(TTexts.tContinue))),
               16.heightBox,
               SizedBox(

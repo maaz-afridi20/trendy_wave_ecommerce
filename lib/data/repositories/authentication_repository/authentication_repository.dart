@@ -17,11 +17,20 @@ class AuthenticationRespsitory extends GetxController {
   }
 
   screenRedirect() async {
-    // local storage.
-    deviceStorage.writeIfNull('isFirstTime', true);
-    deviceStorage.read('isFirstTime') != true
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(() => const OnBoardingScreen());
+    final user = _auth.currentUser;
+    if (user != null) {
+      if (user.emailVerified) {
+        Get.offAll(() => const NavigationMenu());
+      } else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    } else {
+// local storage.
+      deviceStorage.writeIfNull('isFirstTime', true);
+      deviceStorage.read('isFirstTime') != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(() => const OnBoardingScreen());
+    }
   }
 
 //  ----------------------------------EMAIL AND PASSWORD SIGNIN----------------------------------------------
@@ -98,12 +107,23 @@ class AuthenticationRespsitory extends GetxController {
 // delete the user and firestore account.
 
 // logOut the user.
-
   Future<void> logOut() async {
     try {
+      TFullScreenLoader.openLoading('Loading...', TImages.docerAnimation);
       await _auth.signOut();
+      TFullScreenLoader.stopLoading();
+      Get.off(() => const LoginScreen());
+      TLoaders.successSnackbar(
+          title: 'Sussessfully signed out',
+          message: 'GORU BO BACHAY ZA WRAK SHAA OSS!');
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code);
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code);
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code);
     } catch (e) {
       TLoaders.errorSnackbar(title: "Opss", message: e.toString());
     }

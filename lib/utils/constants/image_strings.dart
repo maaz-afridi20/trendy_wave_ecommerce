@@ -267,7 +267,7 @@ class TImages {
   static const String securityIcon =
       "assets/images/animations/67263-security-icon-transparent.json";
   static const String cgeckRegister =
-      "assets/images/animations/72785-check-register.json";
+      "assets/images/animations/72462-check-register.json";
   static const String serachingJson =
       "assets/images/animations/72785-searching.json";
   static const String packingInProgress =

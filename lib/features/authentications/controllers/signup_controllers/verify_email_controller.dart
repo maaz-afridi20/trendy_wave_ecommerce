@@ -46,7 +46,7 @@ class VerifyEmailController extends GetxController {
     final currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null && currentUser.emailVerified) {
       Get.off(() => SuccessScreen(
-          image: TImages.cgeckRegister,
+          image: TImages.deliveredInPlaneIllustration,
           title: TTexts.yourAccountCreatedTitle,
           subTitle: TTexts.yourAccountCreatedSubTitle,
           onPressed: () => AuthenticationRespsitory.instance.screenRedirect()));
