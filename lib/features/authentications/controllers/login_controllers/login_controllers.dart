@@ -37,7 +37,7 @@ class LoginController extends GetxController {
 
       //! signing the user.
       await AuthenticationRespsitory.instance
-          .signInWithEmailAndPassword(email.text.trim(), password.text.trim());
+          .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       //! showing the success message.
       TLoaders.successSnackbar(

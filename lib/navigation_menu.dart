@@ -25,6 +25,7 @@ class NavigationMenu extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: controller.navIcons.length,
                   scrollDirection: Axis.horizontal,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

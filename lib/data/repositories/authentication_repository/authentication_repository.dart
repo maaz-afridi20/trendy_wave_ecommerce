@@ -74,9 +74,11 @@ class AuthenticationRespsitory extends GetxController {
 
 // [Email Authentication] Sign In
 
-  Future<void> signInWithEmailAndPassword(String email, String password) async {
+  Future<UserCredential> loginWithEmailAndPassword(
+      String email, String password) async {
     try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code);
     } on FirebaseException catch (e) {
