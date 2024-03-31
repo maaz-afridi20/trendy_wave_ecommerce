@@ -14,7 +14,7 @@ class TLoginForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
-            //! Email textfield.
+            //!Validate Email textfield.
             TextFormField(
               controller: controller.email,
               validator: (value) => TValidator.validateEmail(value),
@@ -24,10 +24,14 @@ class TLoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
+
+            //! Validate password.
             Obx(
               () => TextFormField(
+                validator: (value) =>
+                    TValidator.validateEmptyText('Password', value),
                 controller: controller.password,
-                validator: (value) => TValidator.validatePassword(value),
+                obscureText: controller.isObsecure.value,
                 decoration: InputDecoration(
                   labelText: TTexts.password,
                   prefixIcon: const Icon(Iconsax.password_check),
@@ -42,7 +46,6 @@ class TLoginForm extends StatelessWidget {
                         : const Icon(Icons.remove_red_eye),
                   ),
                 ),
-                obscureText: controller.isObsecure.value,
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
@@ -79,7 +82,7 @@ class TLoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 // onPressed: () => Get.to(() => const NavigationMenu()),
-                onPressed: () => controller.signIn(),
+                onPressed: () => controller.emailAndPasswordSignin(),
                 child: const Text(TTexts.signIn),
               ),
             ),

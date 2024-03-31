@@ -5,49 +5,98 @@ class LoginController extends GetxController {
   // variables
   final RxBool isObsecure = true.obs;
   final RxBool rememberMe = true.obs;
+  final localStorage = GetStorage();
   final email = TextEditingController();
   final password = TextEditingController();
   final GlobalKey<FormState> loginFormkey = GlobalKey<FormState>();
 
   //
 
-  Future<void> signIn() async {
-    try {
-      //! start the loading..
-      TFullScreenLoader.openLoading('Loading...', TImages.docerAnimation);
+  @override
+  void onInit() {
+    email.text = localStorage.read('REMEMBER_ME_EMAIL');
+    password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    super.onInit();
+  }
 
-      //! form validation...
-      if (!loginFormkey.currentState!.validate()) {
-        if (kDebugMode) print('not run thiss.');
-        return;
-      }
+  Future<void> emailAndPasswordSignin() async {
+    try {
+      //! showing the animation of loading
+      TFullScreenLoader.openLoading(
+          'Logging In You :)', TImages.docerAnimation);
+
+      //! form validation
+      if (!loginFormkey.currentState!.validate()) {}
 
       //! check the internet connection
       final isConnected = await NetworkManager.instance.isConnected();
-      if (isConnected == !true) {
+      if (!isConnected) {
         TLoaders.customToast(message: 'No internet connection');
-        if (kDebugMode) print(isConnected);
+        TFullScreenLoader.stopLoading();
         return;
       }
 
-      //! pricavy policy..
+      //! save the data if remember me is enabled
       if (rememberMe.value) {
-        return;
+        localStorage.write('REMEMBER_ME_EMAIL', email.text.trim());
+        localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
       }
 
-      //! signing the user.
+      //! login the user
+
       await AuthenticationRespsitory.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
-      //! showing the success message.
-      TLoaders.successSnackbar(
-          title: 'Congratulations', message: 'Successfully Logged In');
+      //! remove the loader
 
-      //
-      Get.to(() => const NavigationMenu());
+      TFullScreenLoader.stopLoading();
+
+      TLoaders.successSnackbar(
+          title: 'HURRAY', message: 'successfully logged into your account');
+
+      //! redirect to the screen
+
+      AuthenticationRespsitory.instance.screenRedirect();
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());
     }
   }
 }
+
+
+
+      // //! form validation...
+      // if (!loginFormkey.currentState!.validate()) {
+      //   if (kDebugMode) print('Not validated..');
+      //   return;
+      // }
+
+      // //! check the internet connection
+      // final isConnected = await NetworkManager.instance.isConnected();
+      // if (!isConnected) {
+      //   TLoaders.customToast(message: 'No internet connection');
+      //   if (kDebugMode) print('no connection');
+      //   return;
+      // }
+
+      // //! start the loading..
+      // TFullScreenLoader.openLoading('Loading...', TImages.docerAnimation);
+
+      // //! Remember Me..
+      // if (rememberMe.value) {
+      //   localStorage.write('REMEMBER_ME_EMAIL', email.text.trim());
+      //   localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
+      //   return;
+      // }
+
+      // //! signing the user.
+      // await AuthenticationRespsitory.instance
+      //     .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+
+      // //! showing the success message.
+      // TLoaders.successSnackbar(
+      //     title: 'Congratulations', message: 'Successfully Logged In');
+
+      // //
+      // AuthenticationRespsitory.instance.screenRedirect();

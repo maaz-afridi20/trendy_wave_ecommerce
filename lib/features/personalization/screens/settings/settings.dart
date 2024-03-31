@@ -1,3 +1,5 @@
+import 'package:trendy_waves_ecommerce/utils/popups/default_dialog.dart';
+
 import '../../../../utils/constants/export_statement.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -100,9 +102,13 @@ class SettingsScreen extends StatelessWidget {
 
                   32.heightBox,
                   SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                          onPressed: () {}, child: const Text('Log Out'))),
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      // onPressed: () => controller.logOut(),
+                      onPressed: () => TDialogues.showDefaultDialogue(),
+                      child: const Text('Log Out'),
+                    ),
+                  ),
                   (32 * 2.5).heightBox
                 ],
               ),
