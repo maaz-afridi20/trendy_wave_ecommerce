@@ -2,7 +2,6 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
-
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   // functio to save user data

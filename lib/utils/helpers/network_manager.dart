@@ -21,8 +21,10 @@ class NetworkManager extends GetxController {
     _connectionStatus.value = result;
     if (_connectionStatus.value == ConnectivityResult.none) {
       TLoaders.customToast(message: 'Internet Connection Lost');
-    } else {
+    } else if (_connectionStatus.value == ConnectivityResult.other) {
       TLoaders.customToast(message: 'Internet Connection Restored');
+    } else {
+      return;
     }
   }
 

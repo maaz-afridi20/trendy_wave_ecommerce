@@ -2,11 +2,12 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TSocialButtons extends StatelessWidget {
   const TSocialButtons({
-    super.key,
+    super.key
   });
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -16,7 +17,7 @@ class TSocialButtons extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => controller.googleSignIn(),
             icon: const Image(
               width: TSizes.iconMd,
               height: TSizes.iconMd,

@@ -9,6 +9,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   final GlobalKey<FormState> loginFormkey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   //
 
@@ -43,19 +44,46 @@ class LoginController extends GetxController {
       }
 
       //! login the user
-
       await AuthenticationRespsitory.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       //! remove the loader
-
       TFullScreenLoader.stopLoading();
-
       TLoaders.successSnackbar(
           title: 'HURRAY', message: 'successfully logged into your account');
 
       //! redirect to the screen
+      AuthenticationRespsitory.instance.screenRedirect();
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackbar(title: 'Ohh!', message: e.toString());
+    }
+  }
 
+  //! ---------------------------google signin-------------------------------------
+
+  Future<void> googleSignIn() async {
+    try {
+      //open loading.
+      TFullScreenLoader.openLoading('Signing In..', TImages.docerAnimation);
+
+      //checking the internet connection.
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        TFullScreenLoader.stopLoading();
+        TLoaders.customToast(message: 'No internet connection');
+        return;
+      }
+
+      // google auth.
+      final userCredentials =
+          await AuthenticationRespsitory.instance.googleSignIn();
+      // save the user record.
+
+      await userController.saveUserRecord(userCredentials);
+      //loader.
+      TFullScreenLoader.stopLoading();
+      //
       AuthenticationRespsitory.instance.screenRedirect();
     } catch (e) {
       TFullScreenLoader.stopLoading();
@@ -63,6 +91,8 @@ class LoginController extends GetxController {
     }
   }
 }
+
+
 
 
 
