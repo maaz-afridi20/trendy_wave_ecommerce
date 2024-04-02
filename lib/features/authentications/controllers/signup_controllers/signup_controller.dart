@@ -27,6 +27,7 @@ class SignupController extends GetxController {
 
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        TFullScreenLoader.stopLoading();
         TLoaders.customToast(message: 'No Internet Connection');
         if (kDebugMode) print(isConnected);
         return;
@@ -39,6 +40,7 @@ class SignupController extends GetxController {
 
       //! check privacy policy
       if (!privacyPolicy.value) {
+        TFullScreenLoader.stopLoading();
         TLoaders.warningSnackbar(
             title: 'Privacy Policy',
             message:
