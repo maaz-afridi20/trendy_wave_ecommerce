@@ -26,7 +26,7 @@ class SignupController extends GetxController {
       //! check the internet connection
 
       final isConnected = await NetworkManager.instance.isConnected();
-      if (isConnected == !true) {
+      if (!isConnected) {
         TLoaders.customToast(message: 'No Internet Connection');
         if (kDebugMode) print(isConnected);
         return;
@@ -79,7 +79,7 @@ class SignupController extends GetxController {
       Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       TFullScreenLoader.stopLoading();
-      TLoaders.customToast(message: 'No internet connection');
+      TLoaders.errorSnackbar(title: 'Error..', message: '$e'.capitalizeFirst);
     }
   }
 }

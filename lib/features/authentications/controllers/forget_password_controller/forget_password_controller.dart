@@ -70,7 +70,7 @@ class ForgetPasswordController extends GetxController {
 
       // success message.
       TLoaders.successSnackbar(
-          title: 'Email Sent',
+          title: 'Email sent'.capitalizeFirst,
           message:
               'Password reset email link has been sent to your email. Click on link to reset your password'
                   .tr);
