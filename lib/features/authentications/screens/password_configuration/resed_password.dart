@@ -33,7 +33,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center),
               16.heightBox,
-              Text(TTexts.changeYourPasswordSubTitle,
+              Text(TTexts.changeYourPasswordTitle,
                   style: Theme.of(context).textTheme.labelLarge,
                   textAlign: TextAlign.center),
               16.heightBox,
