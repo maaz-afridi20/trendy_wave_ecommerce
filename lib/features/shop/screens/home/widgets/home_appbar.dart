@@ -7,6 +7,7 @@ class THomeAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return TAppbar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -16,11 +17,13 @@ class THomeAppbar extends StatelessWidget {
                   .textTheme
                   .labelMedium!
                   .apply(color: TColors.grey)),
-          Text(TTexts.homeAppbarSubTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall!
-                  .apply(color: TColors.white)),
+          Obx(
+            () => Text(controller.user.value.fullName,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .apply(color: TColors.white)),
+          )
         ],
       ),
       actions: const [

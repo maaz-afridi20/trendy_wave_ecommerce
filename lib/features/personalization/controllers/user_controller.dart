@@ -1,8 +1,28 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class UserController extends GetxController {
+  // variables
   static UserController get instance => Get.find();
   final userRepository = Get.put(UserRepository());
+  Rx<UserModel> user = UserModel.empty().obs;
+
+  @override
+  void onInit() {
+    fetchUserRecord();
+    super.onInit();
+  }
+
+  Future<void> fetchUserRecord() async {
+    try {
+      final user = await userRepository.fetchUserDetails();
+      // iss (this) ka matlab hai k hm ye
+      // jo ooper declare hua haii variables.. mein iss ka kah rahay hain..
+      this.user(user);
+    } catch (e) {
+      user(UserModel.empty());
+    }
+  }
+
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
       if (userCredentials != null) {

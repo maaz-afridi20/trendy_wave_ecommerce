@@ -7,6 +7,7 @@ class AuthenticationRespsitory extends GetxController {
   // variables..
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+  User? get authUser => _auth.currentUser;
 
   // this function will be called directly after the main
   // function is called.
