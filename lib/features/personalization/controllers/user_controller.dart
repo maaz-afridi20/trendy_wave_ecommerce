@@ -5,6 +5,7 @@ class UserController extends GetxController {
   static UserController get instance => Get.find();
   final userRepository = Get.put(UserRepository());
   Rx<UserModel> user = UserModel.empty().obs;
+  final profileLoading = false.obs;
 
   @override
   void onInit() {
@@ -14,12 +15,15 @@ class UserController extends GetxController {
 
   Future<void> fetchUserRecord() async {
     try {
+      profileLoading.value = true;
       final user = await userRepository.fetchUserDetails();
       // iss (this) ka matlab hai k hm ye
       // jo ooper declare hua haii variables.. mein iss ka kah rahay hain..
       this.user(user);
     } catch (e) {
       user(UserModel.empty());
+    } finally {
+      profileLoading.value = false;
     }
   }
 

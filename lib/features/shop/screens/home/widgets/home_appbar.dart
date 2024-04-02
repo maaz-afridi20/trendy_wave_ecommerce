@@ -1,4 +1,5 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
+import 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
 
 class THomeAppbar extends StatelessWidget {
   const THomeAppbar({
@@ -17,13 +18,17 @@ class THomeAppbar extends StatelessWidget {
                   .textTheme
                   .labelMedium!
                   .apply(color: TColors.grey)),
-          Obx(
-            () => Text(controller.user.value.fullName,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
-                    .apply(color: TColors.white)),
-          )
+          Obx(() {
+            if (controller.profileLoading.value) {
+              return const TShimmerEffect(width: 80, height: 15);
+            } else {
+              return Text(controller.user.value.fullName,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .apply(color: TColors.white));
+            }
+          })
         ],
       ),
       actions: const [

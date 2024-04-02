@@ -1,3 +1,5 @@
+import 'package:trendy_waves_ecommerce/features/personalization/screens/profile/change_name.dart';
+
 import '../../../../utils/constants/export_statement.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -5,6 +7,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     String userId = '6849023';
     return Scaffold(
       appBar: const TAppbar(
@@ -43,9 +46,13 @@ class ProfileScreen extends StatelessWidget {
                   title: 'Profile Information', showActionButton: false),
               16.heightBox,
               TProfileMenu(
-                  title: 'Name', value: 'Coding With T', onPressed: () {}),
+                  title: 'Name',
+                  value: controller.user.value.fullName,
+                  onPressed: () {}),
               TProfileMenu(
-                  title: 'User Name', value: 'Awarapan..', onPressed: () {}),
+                  title: 'User Name',
+                  value: controller.user.value.userName,
+                  onPressed: () => Get.to(() => const ChangeName())),
               16.heightBox,
               const Divider(),
               16.heightBox,
@@ -56,17 +63,19 @@ class ProfileScreen extends StatelessWidget {
               16.heightBox,
               TProfileMenu(
                   title: 'User Id',
-                  value: userId,
+                  value: controller.user.value.id,
                   icon: Iconsax.copy,
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: userId));
                     VxToast.show(context, msg: 'Copied to clipboard $userId');
                   }),
               TProfileMenu(
-                  title: 'Email', value: 'coding_with_t', onPressed: () {}),
+                  title: 'Email',
+                  value: controller.user.value.email,
+                  onPressed: () {}),
               TProfileMenu(
                   title: 'Phone Number',
-                  value: '03121915579..',
+                  value: controller.user.value.phoneNumber,
                   onPressed: () {}),
               TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
               TProfileMenu(
