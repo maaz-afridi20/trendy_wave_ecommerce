@@ -93,14 +93,30 @@ class AuthenticationRespsitory extends GetxController {
     }
   }
 
+  //! forget password signin
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException().message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong when signing in';
+    }
+  }
+
 // [Re Authenticate] Re Authenticate user
 
 // [Email Authentication] Forget Password
 
 //!  ----------------------------------Google Fb Sign In----------------------------------------------
 
-//! Google Sign In
-
+  //! Google Sign In
   Future<UserCredential?> googleSignIn() async {
     try {
       //this will show the popup.. of all the

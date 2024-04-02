@@ -147,3 +147,4 @@ export 'package:trendy_waves_ecommerce/utils/exceptions/firebase_auth_exceptions
 export 'package:trendy_waves_ecommerce/features/authentications/controllers/login_controllers/login_controllers.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/controllers/signup_controllers/verify_email_controller.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
+export 'package:trendy_waves_ecommerce/features/authentications/controllers/forget_password_controller/forget_password_controller.dart';

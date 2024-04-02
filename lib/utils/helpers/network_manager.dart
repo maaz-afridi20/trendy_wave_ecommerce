@@ -19,10 +19,24 @@ class NetworkManager extends GetxController {
   // Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
-    if (_connectionStatus.value == ConnectivityResult.none) {
-      TLoaders.customToast(message: 'Internet Connection Lost');
-    } else if (_connectionStatus.value == ConnectivityResult.other) {
-      TLoaders.customToast(message: 'Internet Connection Restored');
+    if (result == ConnectivityResult.none) {
+      // TLoaders.customToast(message: 'Internet Connection Lost');
+      Get.snackbar("Connection Lost", "Please check your internet connection ",
+          isDismissible: true,
+          colorText: TColors.light,
+          backgroundColor: THelperFunctions.isDarkMode()
+              ? TColors.darkerGrey.withOpacity(0.9)
+              : TColors.dark);
+    } else if (result != ConnectivityResult.none) {
+      // TLoaders.customToast(message: 'Internet Connection Restored');
+
+      Get.snackbar(
+          "Connection Restored", "Internet connection has been restored",
+          isDismissible: true,
+          colorText: TColors.light,
+          backgroundColor: THelperFunctions.isDarkMode()
+              ? TColors.darkerGrey.withOpacity(0.9)
+              : TColors.dark);
     } else {
       return;
     }

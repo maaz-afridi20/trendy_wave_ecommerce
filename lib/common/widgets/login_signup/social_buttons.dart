@@ -2,7 +2,7 @@ import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TSocialButtons extends StatelessWidget {
   const TSocialButtons({
-    super.key
+    super.key,
   });
 
   @override
