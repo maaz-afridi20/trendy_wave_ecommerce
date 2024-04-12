@@ -35,7 +35,9 @@ class ReAuthLoginForm extends StatelessWidget {
                             onPressed: () =>
                                 controller.hidePasswords.value !=
                                 controller.hidePasswords.value,
-                            icon: const Icon(Iconsax.eye_slash)),
+                            icon: controller.isObsecure.value
+                                ? const Icon(Iconsax.eye_slash)
+                                : const Icon(Icons.remove_red_eye)),
                       )),
                 ),
                 const SizedBox(height: TSizes.spaceBtwSections),

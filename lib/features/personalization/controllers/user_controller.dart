@@ -10,6 +10,7 @@ class UserController extends GetxController {
   final hidePasswords = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
+  RxBool isObsecure = true.obs;
   GlobalKey<FormState> reAuthFormkey = GlobalKey<FormState>();
 
   @override
