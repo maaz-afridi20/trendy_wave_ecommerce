@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class UserRepository extends GetxController {
@@ -86,6 +88,24 @@ class UserRepository extends GetxController {
   Future<void> removeUserRecord(String userID) async {
     try {
       await _db.collection("Users").doc(userID).delete();
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code);
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code);
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } catch (e) {
+      throw 'some error occurred while saving user data';
+    }
+  }
+
+  // upload any image.
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = ref.getDownloadURL();
+      return url;
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code);
     } on PlatformException catch (e) {

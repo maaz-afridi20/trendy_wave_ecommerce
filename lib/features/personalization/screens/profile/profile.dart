@@ -1,4 +1,5 @@
 import 'package:trendy_waves_ecommerce/features/personalization/screens/profile/change_name.dart';
+import 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
 
 import '../../../../utils/constants/export_statement.dart';
 
@@ -26,10 +27,21 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const TCircularImage(
-                        image: TImages.user, width: 80, height: 80),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image =
+                          networkImage.isNotEmpty ? networkImage : TImages.user;
+                      return controller.isImageUploading.value
+                          ? const TShimmerEffect(
+                              width: 80, height: 80, readius: 80)
+                          : TCircularImage(
+                              image: image,
+                              width: 80,
+                              height: 80,
+                              isNetworkImage: networkImage.isNotEmpty);
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () => controller.uploadUserProfilePicture(),
                         child: const Text('Change Profile Picture')),
                   ],
                 ),

@@ -148,5 +148,6 @@ export 'package:trendy_waves_ecommerce/features/authentications/controllers/logi
 export 'package:trendy_waves_ecommerce/features/authentications/controllers/signup_controllers/verify_email_controller.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:trendy_waves_ecommerce/features/authentications/controllers/forget_password_controller/forget_password_controller.dart';
-
+export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/re_auth_user_login_form.dart';
+export 'package:image_picker/image_picker.dart';
 export 'package:shimmer/shimmer.dart';

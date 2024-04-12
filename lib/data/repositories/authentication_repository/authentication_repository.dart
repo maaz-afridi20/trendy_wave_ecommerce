@@ -113,8 +113,6 @@ class AuthenticationRespsitory extends GetxController {
     }
   }
 
-// [Re Authenticate] Re Authenticate user
-
 // [Email Authentication] Forget Password
 
 //!  ----------------------------------Google Fb Sign In----------------------------------------------
@@ -160,7 +158,7 @@ class AuthenticationRespsitory extends GetxController {
 
 // valid for any user..
 
-// reAuthenticate the user.
+// [Re Authenticate] Re Authenticate user
   Future<void> reAuthenticateWithEmailAndPassword(
       String email, String password) async {
     try {

@@ -1,4 +1,3 @@
-import 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/re_auth_user_login_form.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class UserController extends GetxController {
@@ -10,7 +9,8 @@ class UserController extends GetxController {
   final hidePasswords = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
-  RxBool isObsecure = true.obs;
+  final RxBool isImageUploading = false.obs;
+  final RxBool isObsecure = true.obs;
   GlobalKey<FormState> reAuthFormkey = GlobalKey<FormState>();
 
   @override
@@ -35,24 +35,31 @@ class UserController extends GetxController {
 
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        final nameParts =
-            UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        final userName =
-            UserModel.generateUserName(userCredentials.user!.displayName ?? '');
+      //
+      // this will update the Rx user value
+      // if it is already there it will not do that again.
+      await fetchUserRecord();
 
-        // map the data.
-        final newUser = UserModel(
-            id: userCredentials.user!.uid,
-            firstName: nameParts[0],
-            lastName: nameParts.length > 1 ? nameParts.sublist(1).join() : '',
-            email: userCredentials.user!.email ?? '',
-            userName: userName,
-            phoneNumber: userCredentials.user!.phoneNumber ?? '',
-            profilePicture: userCredentials.user!.photoURL ?? '');
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          final nameParts =
+              UserModel.nameParts(userCredentials.user!.displayName ?? '');
+          final userName = UserModel.generateUserName(
+              userCredentials.user!.displayName ?? '');
 
-        // saving the user data.
-        await userRepository.saveUserData(newUser);
+          // map the data.
+          final newUser = UserModel(
+              id: userCredentials.user!.uid,
+              firstName: nameParts[0],
+              lastName: nameParts.length > 1 ? nameParts.sublist(1).join() : '',
+              email: userCredentials.user!.email ?? '',
+              userName: userName,
+              phoneNumber: userCredentials.user!.phoneNumber ?? '',
+              profilePicture: userCredentials.user!.photoURL ?? '');
+
+          // saving the user data.
+          await userRepository.saveUserData(newUser);
+        }
       }
     } catch (e) {
       TLoaders.warningSnackbar(
@@ -132,6 +139,38 @@ class UserController extends GetxController {
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.warningSnackbar(title: 'Oppss', message: e.toString());
+    }
+  }
+
+  //! upload the profile image to firebase.
+
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+      if (image != null) {
+        isImageUploading.value = true;
+        final imageUrl =
+            await userRepository.uploadImage("Users/Images/Profile/", image);
+
+        // now update the user image.
+        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+        await userRepository.updateSingleField(json);
+
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+        TLoaders.successSnackbar(
+            title: 'Congratulations',
+            message: 'Successfully updated your profile picture');
+      }
+    } catch (e) {
+      TLoaders.errorSnackbar(
+          title: 'Oppss!', message: 'something went wrong $e');
+    } finally {
+      isImageUploading.value = false;
     }
   }
 
