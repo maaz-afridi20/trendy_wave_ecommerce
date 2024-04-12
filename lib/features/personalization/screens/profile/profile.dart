@@ -48,11 +48,11 @@ class ProfileScreen extends StatelessWidget {
               TProfileMenu(
                   title: 'Name',
                   value: controller.user.value.fullName,
-                  onPressed: () {}),
+                  onPressed: () => Get.to(() => const ChangeName())),
               TProfileMenu(
                   title: 'User Name',
                   value: controller.user.value.userName,
-                  onPressed: () => Get.to(() => const ChangeName())),
+                  onPressed: () {}),
               16.heightBox,
               const Divider(),
               16.heightBox,
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
 
               Center(
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.deleteAccountWarningPopup(),
                       child: const Text(
                         'Delete Account Permenantly',
                         style: TextStyle(color: Colors.red),

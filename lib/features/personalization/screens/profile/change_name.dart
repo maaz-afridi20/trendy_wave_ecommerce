@@ -20,7 +20,7 @@ class ChangeName extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('User easy name for easy verification.',
+              Text('Use easy name for easy verification.',
                   style: Theme.of(context).textTheme.labelMedium),
               const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -40,7 +40,7 @@ class ChangeName extends StatelessWidget {
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     TextFormField(
-                      controller: controller.firstName,
+                      controller: controller.lastName,
                       validator: (value) =>
                           TValidator.validateEmptyText('Last Name', value),
                       expands: false,

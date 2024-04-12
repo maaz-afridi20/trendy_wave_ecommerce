@@ -7,6 +7,8 @@ class AuthenticationRespsitory extends GetxController {
   // variables..
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+
+  // this will return the current logged in user.
   User? get authUser => _auth.currentUser;
 
   // this function will be called directly after the main
@@ -158,7 +160,48 @@ class AuthenticationRespsitory extends GetxController {
 
 // valid for any user..
 
+// reAuthenticate the user.
+  Future<void> reAuthenticateWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      // create credentials..
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+
+      // now authenticate the user
+      await FirebaseAuth.instance.currentUser!
+          .reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException().message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      TLoaders.errorSnackbar(title: "Opss", message: e.toString());
+    }
+  }
+
 // delete the user and firestore account.
+
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException().message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      TLoaders.errorSnackbar(title: "Opss", message: e.toString());
+    }
+  }
 
 // logOut the user.
   Future<void> logOut() async {

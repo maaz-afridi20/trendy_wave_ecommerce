@@ -26,6 +26,7 @@ class UserRepository extends GetxController {
       // to give the uid of that user in the doc().
       final documentSnapshot = await _db
           .collection('Users')
+          // .doc(FirebaseAuth.instance.currentUser?.uid) // we can also do like this.
           .doc(AuthenticationRespsitory.instance.authUser?.uid)
           .get();
       // we have to conver the data to json format.
