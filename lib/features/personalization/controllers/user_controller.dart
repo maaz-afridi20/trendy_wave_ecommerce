@@ -144,7 +144,7 @@ class UserController extends GetxController {
 
   //! upload the profile image to firebase.
 
-  uploadUserProfilePicture() async {
+  Future<void> uploadUserProfilePicture() async {
     try {
       final image = await ImagePicker().pickImage(
           source: ImageSource.gallery,

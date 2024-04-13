@@ -8,7 +8,9 @@ class TProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode();
-    RxBool isLiked = false.obs;
+    final deviceStorage = GetStorage();
+    bool isLikedInitially = (deviceStorage.read('isLiked') ?? false);
+    RxBool isLiked = isLikedInitially.obs;
     return TCurvedEdgesWidget(
       child: Container(
         color: dark ? TColors.darkGrey : TColors.light,
@@ -59,6 +61,7 @@ class TProductImageSlider extends StatelessWidget {
                 Obx(() => TCircularIcon(
                     onPress: () {
                       isLiked.value = !isLiked.value;
+                      deviceStorage.write('isLiked', isLiked.value);
                       THelperFunctions.showSnackBar(isLiked.value
                           ? 'added to favourites'
                           : 'removed from favourites');

@@ -15,8 +15,8 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    email.text = localStorage.read('REMEMBER_ME_EMAIL');
-    password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    // email.text = localStorage.read('REMEMBER_ME_EMAIL');
+    // password.text = localStorage.read('REMEMBER_ME_PASSWORD');
     super.onInit();
   }
 
@@ -27,7 +27,10 @@ class LoginController extends GetxController {
           'Logging In You :)', TImages.docerAnimation);
 
       //! form validation
-      if (!loginFormkey.currentState!.validate()) {}
+      if (!loginFormkey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
+        return;
+      }
 
       //! check the internet connection
       final isConnected = await NetworkManager.instance.isConnected();
