@@ -155,3 +155,7 @@ export 'package:trendy_waves_ecommerce/utils/popups/default_dialog.dart';
 export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/change_name.dart';
 export 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
 export 'package:cached_network_image/cached_network_image.dart';
+export 'package:trendy_waves_ecommerce/features/shop/models/category_model.dart';
+export 'package:trendy_waves_ecommerce/data/repositories/categories/category_repository.dart';
+export 'package:trendy_waves_ecommerce/features/shop/controllers/category_controller.dart';
+export 'package:trendy_waves_ecommerce/utils/shimmers/category_shimmer.dart';

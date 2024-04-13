@@ -7,21 +7,35 @@ class THomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: 6,
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemBuilder: (_, index) {
-          return TVerticalImageText(
-            image: TImages.shoeIcon,
-            title: 'Shoes Icon',
-            onMTap: () => Get.to(() => const SubCategoriesScren()),
-          );
-        },
-      ),
-    );
+    final categoryController = Get.put(CategoryController());
+    return Obx(() {
+      if (categoryController.isLoading.value) return const CategoryShimmer();
+
+      if (categoryController.featuredCategories.isEmpty) {
+        return Center(
+            child: Text('No Data Found',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .apply(color: Colors.white)));
+      }
+      return SizedBox(
+        height: 80,
+        child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          itemCount: categoryController.featuredCategories.length,
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemBuilder: (_, index) {
+            final singleCategory = categoryController.featuredCategories[index];
+            return TVerticalImageText(
+              image: singleCategory.image,
+              title: singleCategory.name,
+              onMTap: () => Get.to(() => const SubCategoriesScren()),
+            );
+          },
+        ),
+      );
+    });
   }
 }
