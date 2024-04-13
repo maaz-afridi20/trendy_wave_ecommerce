@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
-import 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
 
 class TCircularImage extends StatelessWidget {
   const TCircularImage({

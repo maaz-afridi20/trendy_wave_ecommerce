@@ -1,5 +1,3 @@
-import 'package:trendy_waves_ecommerce/utils/popups/default_dialog.dart';
-
 import '../../../../utils/constants/export_statement.dart';
 
 class SettingsScreen extends StatelessWidget {

@@ -27,43 +27,33 @@ class NavigationMenu extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              controller.selectedIndex.value = index;
-                            },
-                            child: Obx(
-                              () => Container(
-                                margin: EdgeInsets.symmetric(horizontal: 25.w),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Icon(
-                                      controller.navIcons[index],
-                                      color: controller.selectedIndex.value ==
-                                              index
-                                          ? TColors.light
-                                          : TColors.buttonDisabled
-                                              .withOpacity(0.7),
-                                    ),
-                                    Text(controller.navTitles[index],
-                                        style: TextStyle(
-                                            color: controller
-                                                        .selectedIndex.value ==
-                                                    index
-                                                ? TColors.light
-                                                : TColors.buttonDisabled
-                                                    .withOpacity(0.7))),
-                                  ],
+                    return GestureDetector(
+                        onTap: () {
+                          controller.selectedIndex.value = index;
+                        },
+                        child: Obx(
+                          () => Container(
+                            padding: EdgeInsets.symmetric(horizontal: 19.h),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(
+                                  controller.navIcons[index],
+                                  color: controller.selectedIndex.value == index
+                                      ? TColors.light
+                                      : TColors.buttonDisabled.withOpacity(0.7),
                                 ),
-                              ),
-                            )),
-                      ],
-                    );
+                                Text(controller.navTitles[index],
+                                    style: TextStyle(
+                                        color: controller.selectedIndex.value ==
+                                                index
+                                            ? TColors.light
+                                            : TColors.buttonDisabled
+                                                .withOpacity(0.7))),
+                              ],
+                            ),
+                          ),
+                        ));
                   },
                 )),
           ),

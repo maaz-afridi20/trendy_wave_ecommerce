@@ -177,6 +177,5 @@ class UserController extends GetxController {
   // for copyning to clipboard.
   Future<void> copyToClipboard(String text, context) async {
     await Clipboard.setData(ClipboardData(text: text));
-    VxToast.show(msg: 'copied to clipboard $text', context);
   }
 }

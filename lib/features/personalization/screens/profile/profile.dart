@@ -1,6 +1,3 @@
-import 'package:trendy_waves_ecommerce/features/personalization/screens/profile/change_name.dart';
-import 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
-
 import '../../../../utils/constants/export_statement.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,7 +6,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = UserController.instance;
-    String userId = '6849023';
+
     return Scaffold(
       appBar: const TAppbar(
         title: Text('Profile'),
@@ -78,8 +75,8 @@ class ProfileScreen extends StatelessWidget {
                   value: controller.user.value.id,
                   icon: Iconsax.copy,
                   onPressed: () {
-                    Clipboard.setData(ClipboardData(text: userId));
-                    VxToast.show(context, msg: 'Copied to clipboard $userId');
+                    Clipboard.setData(
+                        ClipboardData(text: controller.user.value.id));
                   }),
               TProfileMenu(
                   title: 'Email',

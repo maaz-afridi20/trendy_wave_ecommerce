@@ -1,5 +1,4 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
-import 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
 
 class THomeAppbar extends StatelessWidget {
   const THomeAppbar({

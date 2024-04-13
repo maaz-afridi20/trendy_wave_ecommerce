@@ -151,3 +151,7 @@ export 'package:trendy_waves_ecommerce/features/authentications/controllers/forg
 export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/widgets/re_auth_user_login_form.dart';
 export 'package:image_picker/image_picker.dart';
 export 'package:shimmer/shimmer.dart';
+export 'package:trendy_waves_ecommerce/utils/popups/default_dialog.dart';
+export 'package:trendy_waves_ecommerce/features/personalization/screens/profile/change_name.dart';
+export 'package:trendy_waves_ecommerce/utils/shimmers/shimmer.dart';
+export 'package:cached_network_image/cached_network_image.dart';
