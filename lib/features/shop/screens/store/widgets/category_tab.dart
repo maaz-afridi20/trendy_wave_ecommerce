@@ -1,7 +1,9 @@
 import 'package:trendy_waves_ecommerce/utils/constants/export_statement.dart';
 
 class TCategoryTab extends StatelessWidget {
-  const TCategoryTab({super.key});
+  const TCategoryTab({super.key, required this.category});
+
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
